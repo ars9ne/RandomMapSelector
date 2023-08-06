@@ -7,18 +7,33 @@
 </head>
 <body>
     <form method="post" action="/">
-        <h1> Random Map</h1>
+        <h1>Random Map</h1>
         <h2 id="map"> {{ new_heading }}</h2>
         <button id="changemapbutton" type="button">Roll</button>
+        <button id="menubutton" type="button" style="vertical-align:middle" onclick="handleMenuButtonClick()"><span>Menu </span></button>
+        <div id="menu-section">
+            <a href = "/wingman">
+            <p>Menu Item 1</p>
+            <button id="displaymode"><span> Display Mode</span></button>
+        </div>
+
     </form>
 
     <script>
-        // JavaScript code to handle the button click event
         document.getElementById('changemapbutton').addEventListener('click', function() {
-            // Change the content of the h2 element
             //document.getElementById('map').textContent = '{{new_heading}}';
             location.reload()
         });
     </script>
+
+    <script>
+    function handleMenuButtonClick() {
+        var menubutton = document.getElementById('menubutton');
+        menubutton.classList.toggle('active');
+
+        var menuSection = document.getElementById('menu-section');
+        menuSection.classList.toggle('show');
+    }
+</script>
 </body>
 </html>

@@ -18,7 +18,7 @@ h2{
     text-align: center;
     transform: translateX(-50%);
 }
-button{
+#changemapbutton{
     color:  black;
     text-align: center;
     position: fixed;
@@ -35,11 +35,83 @@ button{
     box-shadow: 0px 6px #b8ac14;
     transform: translateX(-50%);
 }
-button:hover{
+#changemapbutton:hover{
     background-color: #ffed00;
 }
-button:active{
+#changemapbutton:active{
     background-color: #ffff00;
     box-shadow: 0px 2px #b8ac14;
     transform: translateY(4px) translateX(-50%);
+}
+
+#menubutton{
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 90px;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 1;
+    margin: 5px;
+
+}
+#menubutton span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+#menubutton:hover span{
+    padding-right: 25px;
+}
+#menubutton span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#menubutton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#menubutton.active {
+    transform: translateX(100px);
+}
+
+
+
+#menu-section {
+    z-index: 0;
+    position: fixed;
+    top: 0px;
+    left: -250px;
+    width: 200px;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    opacity: 1;
+    pointer-events: none;
+    transition: left 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    text-align: right;
+    padding-top: 50px;
+}
+
+#menu-section.show {
+    left: -15px;
+    opacity: 1;
+    pointer-events: auto;
 }
