@@ -12,7 +12,8 @@ def index():
 
 @app.route('/wingman', methods=['GET'])
 def get_random_map():
-    return random.choice(map_list_wingman)
+    new_heading = str(map_list_wingman[random.randint(0, 9)])
+    return render_template('wingman.html', new_heading=new_heading)
 
 if __name__ == '__main__':
     app.run(debug=True)
