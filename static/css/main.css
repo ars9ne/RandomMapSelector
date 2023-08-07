@@ -134,10 +134,12 @@ a:hover, a:active{
     background-color: darkgray;
     color: black;
     text-align: center;
+    text-align-all: center;
     text-decoration: none;
     display: inline-block;
     height: 50px;
     border-radius: 4px;
+    padding: 15px 3px;
 }
 
 #displaymode{

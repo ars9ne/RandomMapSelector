@@ -11,8 +11,8 @@
         <button id="changemapbutton" type="button">Roll</button>
         <button id="menubutton" type="button" style="vertical-align:middle" onclick="handleMenuButtonClick()"><span>Menu </span></button>
         <div id="menu-section">
-            <a href = "/wingman">
-            <p>Game Mode</p>
+            <p><a href = "/wingman">Game Mode</a></p>
+
             <button id="displaymode"><span> Display Mode</span></button>
         </div>
 
@@ -22,17 +22,19 @@
         document.getElementById('changemapbutton').addEventListener('click', function() {
             //document.getElementById('map').textContent = '{{new_heading}}';
             location.reload()
+
         });
+        function handleMenuButtonClick() {
+            var menubutton = document.getElementById('menubutton');
+            menubutton.classList.toggle('active');
+
+            var menuSection = document.getElementById('menu-section');
+            menuSection.classList.toggle('show');
+        }
+        document.getElementById('displaymode').addEventListener('click',function (){
+        })
     </script>
 
-    <script>
-    function handleMenuButtonClick() {
-        var menubutton = document.getElementById('menubutton');
-        menubutton.classList.toggle('active');
 
-        var menuSection = document.getElementById('menu-section');
-        menuSection.classList.toggle('show');
-    }
-</script>
 </body>
 </html>
